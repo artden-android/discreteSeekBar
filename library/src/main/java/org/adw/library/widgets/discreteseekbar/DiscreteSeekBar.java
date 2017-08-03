@@ -236,6 +236,7 @@ public class DiscreteSeekBar extends View {
 
         ColorStateList trackColor = a.getColorStateList(R.styleable.DiscreteSeekBar_dsb_trackColor);
         ColorStateList progressColor = a.getColorStateList(R.styleable.DiscreteSeekBar_dsb_progressColor);
+        ColorStateList thumbColor = a.getColorStateList(R.styleable.DiscreteSeekBar_dsb_thumbColor);
         ColorStateList rippleColor = a.getColorStateList(R.styleable.DiscreteSeekBar_dsb_rippleColor);
         boolean editMode = isInEditMode();
         if (editMode || rippleColor == null) {
@@ -246,6 +247,9 @@ public class DiscreteSeekBar extends View {
         }
         if (editMode || progressColor == null) {
             progressColor = new ColorStateList(new int[][]{new int[]{}}, new int[]{DEFAULT_THUMB_COLOR});
+        }
+        if (editMode || thumbColor == null) {
+            thumbColor = new ColorStateList(new int[][]{new int[]{}}, new int[]{DEFAULT_THUMB_COLOR});
         }
 
         mRipple = SeekBarCompat.getRipple(rippleColor);
@@ -263,7 +267,7 @@ public class DiscreteSeekBar extends View {
         mScrubber = shapeDrawable;
         mScrubber.setCallback(this);
 
-        mThumb = new ThumbDrawable(progressColor, thumbSize);
+        mThumb = new ThumbDrawable(thumbColor, thumbSize);
         mThumb.setCallback(this);
         mThumb.setBounds(0, 0, mThumb.getIntrinsicWidth(), mThumb.getIntrinsicHeight());
 
