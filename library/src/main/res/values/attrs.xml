@@ -16,11 +16,12 @@
   -->
 
 <resources>
-    <!-- DiscreteSeekBar specific attributes -->
-    <declare-styleable name="Theme">
-      <attr name="discreteSeekBarStyle" format="reference"/>
-    </declare-styleable>
     <declare-styleable name="DiscreteSeekBar">
+
+        <!--the default style attr-->
+        <attr name="discreteSeekBarStyle" format="reference"/>
+
+        <!--view attrs-->
         <attr name="dsb_min" format="integer|dimension"/>
         <attr name="dsb_max" format="integer|dimension"/>
         <attr name="dsb_value" format="integer|dimension"/>
